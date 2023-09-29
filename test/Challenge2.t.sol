@@ -40,7 +40,15 @@ contract Challenge2Test is Test {
         // forge test --match-contract Challenge2Test -vvvv //
         ////////////////////////////////////////////////////*/
 
+        // contract1 - give all tokens
 
+        // contract1 deposit 10
+        // contract1 withdrawAll (take 10 ethers)
+        // into contract1 receive - call transfer 10 on contract2
+        // contract2 transfer back 10 to contract1
+        // --> contract1 has 10 tokens and ethers
+
+        // loop
 
         //==================================================//
         vm.stopPrank();
